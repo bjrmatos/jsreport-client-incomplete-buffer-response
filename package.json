@@ -4,6 +4,7 @@
     "start": "node server"
   },
   "dependencies": {
+    "bluebird": "2.9.34",
     "bwip": "0.7.1",
     "express": "4.13.3",
     "jsreport": "0.7.2",

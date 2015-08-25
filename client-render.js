@@ -91,7 +91,7 @@ var asyncPDFRender = new Promises(function(resolve, reject) {
   "processedTables": [ "A", "A2", "B" ] }
   }, function(err, reportResponse) {
     if (err) {
-      return reject(new Error('Error in PDF generation'));
+      return reject(new Error('error response from jsreport'));
     }
 
     resolve(reportResponse);
@@ -108,9 +108,9 @@ asyncPDFRender.then(function(report) {
     });
   });
 }).then(function() {
-  console.log('Reporte generado en PDF!');
+  console.log('PDF generation finished!');
 }).catch(function(err) {
-  console.error('Ocurrio un error al tratar de renderizar el reporte:', err);
+  console.error('error in pdf generation:', err);
 });
 
 /* WITH STREAM */
@@ -118,7 +118,7 @@ asyncPDFRender.then(function(report) {
 //   var wstream = fs.createWriteStream(path.join(__dirname, 'dist-pdf', 'report-from-stream.pdf'));
 //   report.pipe(wstream);
 
-//   console.log('Reporte generado en PDF!');
+//   console.log('PDF generation finished!');
 // }).catch(function(err) {
-//   console.error('Ocurrio un error al tratar de renderizar el reporte:', err);
+//   console.error('error in pdf generation:', err);
 // });

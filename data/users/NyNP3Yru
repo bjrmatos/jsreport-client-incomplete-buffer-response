@@ -1,0 +1,14 @@
+{
+    "username": "prueba",
+    "password": "sha1$34520e53$1$c20eeb467b0b8fc8b769e19fd292a3d5a72a43c0",
+    "passwordVerification": "123",
+    "shortid": "NyNP3Yru",
+    "_id": "JYovOrMT7ewzTIwC",
+    "isClientAppPreferred": true,
+    "readPermissions": [
+        "JYovOrMT7ewzTIwC"
+    ],
+    "editPermissions": [
+        "JYovOrMT7ewzTIwC"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "content": "var bwip = require('bwip');\n\n  // Set the defaults\n\n     var bcid = 'pdf417';\n     var wscale = parseInt(2);\n     var hscale = parseInt(2);\n     var rotate = 'N';\n     var text = request.data.electronicdocument.RUTEmisor +\"|\" + \n                request.data.electronicdocument.tipoDocumento +\"|\"+\n                request.data.electronicdocument.serie + \"|\"+\n                request.data.electronicdocument.correlativo + \"|\" + \n                request.data.electronicdocument.mntTotalIgv +\"|\"+ \n                request.data.electronicdocument.mntTotal +\"|\"+\n                request.data.electronicdocument.fechaEmision + \"|\" +\n                request.data.electronicdocument.tipoRutReceptor + \"|\" +\n                 request.data.electronicdocument.RUTRecep \n                \n                ;\n     var options = {\n      alttext: '(01)01234567890',\n     parsefnc: true\n\n\n};\n\nvar png = bwip.base64(bcid, text, wscale, hscale, rotate, options);\n\nrequest.data.barcode = png;\ndone();\n\n\n",
+    "name": "Barcode_Template",
+    "shortid": "VJFZoNn8",
+    "creationDate": "2015-06-18T22:53:28.000Z",
+    "modificationDate": {
+        "$$date": 1435358755499
+    },
+    "_id": "bXSW4LqTBjC3Ogmz"
+}

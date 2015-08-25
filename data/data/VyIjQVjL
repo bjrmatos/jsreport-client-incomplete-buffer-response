@@ -1,0 +1,10 @@
+{
+    "dataJson": "{ \"electronicdocument\":\n   { \"serie\": \"FF11\",\n     \"idEmpresa\": 2,\n     \"correlativo\":\"00000123\",\n     \"nombreEmisor\": \"MINERIA CORPORATIVA S.A.C.\",\n     \"RUTEmisor\": \"20518915119\",\n     \"direccionOrigen\": \"CAL. CHINCHON NRO. 1018 INT. 501 LIMA - LIMA - SAN ISIDRO\",\n    \"direccionUbigeo\": \"150131\",\n     \"nombreComercial\": \"MINERIA CORPORATIVA S.A.C.\",\n     \"tipoDocumento\": \"07\",\n     \"tipoRutReceptor\": \"6\",\n     \"RUTRecep\": \"20515533061\",\n     \"razonSocRecep\": \"J & J SE?OR DE LOS MILAGROS S.A.C.\",\n     \"dirRecep\": \"MZA. B LOTE. 5 URB. VIRGEN DE GUADALUPE (A LA ESPALDA DEL PQUE ECOLOGICO HUACHIP\",\n     \"tipoMoneda\": \"USD\",\n     \"codigoAutorizacion\": \"000\",\n     \"sustento\": \"Descuento por Item\",\n     \"tipoNotaCredito\": \"09\",\n     \"mntNeto\": \"33.90\",\n     \"mntTotalIgv\": \"6.10\",\n     \"mntTotal\": \"40.00\",\n     \"fechaEmision\": \"2015-06-11\" },\n  \"taxes\":\n   [ { \"idEmpresa\":\"2\",\n       \"codigoImpuesto\": \"1000\",\n       \"montoImpuesto\": \"6.10\",\n       \"tasaImpuesto\": \"0.18\" } ],\n  \"electronicdocumentDet\":\n   [ { \"idEmpresa\": 2,\n       \"numeroLinea\": \"1\",\n       \"cantidadItem\": \"5.000\",\n       \"unidadMedidaItem\": \"NIU\",\n       \"codigoItem\": \"0000016\",\n       \"nombreItem\": \"ACEITE SHELL RIMULA 15W/40\",\n       \"precioItem\": \"8.00\",\n       \"precioItemSinIgv\": \"6.78\",\n       \"montoItem\": \"33.90\",\n       \"indExe\": \"10\",\n       \"codigoTipoIgv\": \"1000\",\n       \"tasaIgv\": \"0.18\",\n       \"impuestoIgv\": \"6.10\" } ],\n  \"discounts\": [ {} ],\n  \"references\":\n   [ { \"idEmpresa\": 2,\n       \"numeroLineaRef\": \"2\",\n       \"tipoDocumentoRef\": \"01\",\n       \"serieRef\": \"FF11\",\n       \"folioRef\": \"00000002\" } ],\n  \"additionalinfo\": [ {} ],\n  \"processedTables\": [ \"A\", \"A2\", \"B\", \"D\" ] }",
+    "name": "NotaCredito_Data",
+    "shortid": "VyIjQVjL",
+    "creationDate": "2015-06-18T04:09:41.000Z",
+    "modificationDate": {
+        "$$date": 1434604020372
+    },
+    "_id": "bCgJ2pl54r8RnmUT"
+}

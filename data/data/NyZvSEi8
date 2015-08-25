@@ -1,0 +1,10 @@
+{
+    "dataJson": "{ \"electronicdocument\":\n   { \"serie\": \"FF11\",\n     \"correlativo\":\"02\",\n     \"idEmpresa\": 2,\n     \"nombreEmisor\": \"MINERIA CORPORATIVA S.A.C.\",\n     \"RUTEmisor\": \"20518915119\",\n     \"direccionOrigen\": \"CAL. CHINCHON NRO. 1018 INT. 501 LIMA - LIMA - SAN ISIDRO\",\n     \"direccionUbigeo\": \"150131\",\n     \"nombreComercial\": \"MINERIA CORPORATIVA S.A.C.\",\n     \"tipoDocumento\": \"08\",\n     \"tipoRutReceptor\": \"6\",\n     \"RUTRecep\": \"20515533061\",\n     \"razonSocRecep\": \"J & J SE?OR DE LOS MILAGROS S.A.C.\",\n     \"dirRecep\": \"MZA. B LOTE. 5 URB. VIRGEN DE GUADALUPE (A LA ESPALDA DEL PQUE ECOLOGICO HUACHIP\",\n     \"tipoMoneda\": \"USD\",\n     \"codigoAutorizacion\": \"000\",\n     \"sustento\": \"Aumento de precio de articulo\",\n     \"tipoNotaCredito\": \"02\",\n     \"mntNeto\": \"20.00\",\n     \"mntTotalIgv\": \"3.60\",\n     \"mntTotal\": \"23.60\",\n     \"fechaEmision\": \"2015-06-11\" },\n  \"taxes\":\n   [ { \"idEmpresa\": 2,\n       \"codigoImpuesto\": \"1000\",\n       \"montoImpuesto\": \"3.60\",\n       \"tasaImpuesto\": \"0.18\" } ],\n  \"electronicdocumentDet\":\n   [ { \"idEmpresa\": 2,\n       \"numeroLinea\": \"1\",\n       \"cantidadItem\": \"2.000\",\n       \"unidadMedidaItem\": \"NIU\",\n       \"codigoItem\": \"0004171\",\n       \"nombreItem\": \"FILTRO DE AIRE SECUNDARIO ( AF-25618 )\",\n       \"precioItem\": \"11.80\",\n       \"precioItemSinIgv\": \"10.00\",\n       \"montoItem\": \"20.00\",\n       \"indExe\": \"10\",\n       \"codigoTipoIgv\": \"1000\",\n       \"tasaIgv\": \"0.18\",\n       \"impuestoIgv\": \"3.60\" } ],\n  \"discounts\": [ {} ],\n  \"references\":\n   [ { \"idEmpresa\": 2,\n       \"numeroLineaRef\": \"1\",\n       \"tipoDocumentoRef\": \"01\",\n       \"serieRef\": \"FF11\",\n       \"folioRef\": \"00000002\" } ],\n  \"additionalinfo\": [ {} ],\n  \"processedTables\": [ \"A\", \"A2\", \"B\", \"D\" ] }",
+    "name": "NotaDebito_Data",
+    "shortid": "NyZvSEi8",
+    "creationDate": "2015-06-18T04:17:04.000Z",
+    "modificationDate": {
+        "$$date": 1436224178583
+    },
+    "_id": "VgbnB5rJPwBhu3Uk"
+}

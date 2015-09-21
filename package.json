@@ -8,7 +8,7 @@
     "bwip": "0.7.1",
     "express": "4.13.3",
     "jsreport": "0.7.2",
-    "jsreport-client": "git://github.com/bjrmatos/nodejs-client.git#using-buffer-list"
+    "jsreport-client": "0.3.0"
   },
   "main": "server.js"
 }

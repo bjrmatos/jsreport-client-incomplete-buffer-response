@@ -1,5 +1,12 @@
 'use strict';
 
+// my version of jsreport-client: git://github.com/bjrmatos/nodejs-client.git#using-buffer-list
+
+// bug/comportamiento interesante a leer sobre streams (el cual usa jsreport-client)
+// con el modulo request https://github.com/request/request/issues/887
+
+
+
 var path = require('path'),
     fs = require('fs'),
     Promises = require('bluebird'),
@@ -94,31 +101,49 @@ var asyncPDFRender = new Promises(function(resolve, reject) {
       return reject(new Error('error response from jsreport'));
     }
 
-    resolve(reportResponse);
+    // TODO: intentar sin promesas, solo usar setTimeout o process.nextTick
+
+    // METHOD 1 (pasando el stream directamente atraves de
+    // promises y obteniendo el buffer despues) PDF INCOMPLETO!
+    // resolve(reportResponse);
+
+    // METHOD 2 (obteniendo el buffer del stream antes de resolver la promesa) FUNCIONA!
+    // reportResponse.body(function(reportBody) {
+    //   resolve(reportBody);
+    // });
+
+    // METHOD 3 (usar directamente el stream y guardar el
+    // archivo antes de resolver la promesa) FUNCIONA!
+    reportResponse.pipe(fs.createWriteStream(path.join(__dirname, 'report-from-buffer.pdf')));
+    reportResponse.on('end', resolve);
   });
 });
 
-/* WITH BUFFER */
 asyncPDFRender.then(function(report) {
-  return new Promises(function(resolve, reject) {
-    report.body(function(reportBody) {
-      console.log('jsreport-client response buffer length:', reportBody.length);
-      console.log('jsreport-client response is correct:', reportBody.length === 27776);
-      resolve(writeFileAsync(path.join(__dirname, 'dist-pdf', 'report-from-buffer.pdf'), reportBody));
-    });
-  });
+  // METHOD 1 (pasando el stream directamente atraves de
+  // promises y obteniendo el buffer despues) PDF INCOMPLETO!
+  // return new Promises(function(resolve, reject) {
+  //   report.body(function(reportBody) {
+  //     console.log('jsreport-client response buffer length:', reportBody.length);
+  //     console.log('jsreport-client response is correct:', reportBody.length === 256841);
+  //     resolve(writeFileAsync(path.join(__dirname, 'report-from-buffer.pdf'), reportBody));
+  //   });
+  // });
+
+  // METHOD 2 (obteniendo el buffer del stream antes de resolver la promesa) FUNCIONA!
+  // var reportBody = report;
+  // console.log('jsreport-client response buffer length:', reportBody.length);
+  // console.log('jsreport-client response is correct:', reportBody.length === 256841);
+  // return Promises.resolve(writeFileAsync(path.join(__dirname, 'report-from-buffer.pdf'), reportBody));
+
+  // METHOD 3 (usar directamente el stream y guardar el
+  // archivo antes de resolver la promesa) FUNCIONA!
+  var pdfSize = fs.readFileSync(path.join(__dirname, 'report-from-buffer.pdf'));
+  console.log('jsreport-client response buffer length:', pdfSize.length);
+  console.log('jsreport-client response is correct:', pdfSize.length === 256841);
+  return Promises.resolve(null);
 }).then(function() {
   console.log('PDF generation finished!');
 }).catch(function(err) {
   console.error('error in pdf generation:', err);
 });
-
-/* WITH STREAM */
-// asyncPDFRender.then(function(report) {
-//   var wstream = fs.createWriteStream(path.join(__dirname, 'dist-pdf', 'report-from-stream.pdf'));
-//   report.pipe(wstream);
-
-//   console.log('PDF generation finished!');
-// }).catch(function(err) {
-//   console.error('error in pdf generation:', err);
-// });
